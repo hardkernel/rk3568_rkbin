@@ -1,5 +1,217 @@
 # PX30 Release Note
 
+## px30_bl31_v1.37.elf
+
+| Date | File | Build commit | Severity |
+| ---- | :--- | ------------ | -------- |
+| 2026-06-24 | px30_bl31_v1.37.elf | be6660383 | important |
+
+### Fixed
+
+| Index | Severity | Update | Issue description | Issue source |
+| ----- | -------- | ------ | ----------------- | ------------ |
+| 1     | important | Fix DDR frequency scaling issues | DDR frequency scaling occasionally causes kernel panic problems | - |
+
+------
+
+## px30_bl31_v1.36.elf
+
+| Date | File | Build commit | Severity |
+| ---- | :--- | ------------ | -------- |
+| 2026-06-03 | px30_bl31_v1.36.elf | 9ce22f446 | important |
+
+### New
+
+1. Add check pd_vo power status.
+
+------
+
+## px30_bl32_v2.21.bin
+
+| Date       | File                | Build Commit | Severity  |
+| ---------- | ------------------- | ------------ | --------- |
+| 2026-04-29 | px30_bl32_v2.21.bin | 5f256dc1a    | important |
+
+### Fixed
+
+| Index | Severity  | Update                                   | Issue description                                            | Issue source |
+| ----- | --------- | ---------------------------------------- | ------------------------------------------------------------ | ------------ |
+| 1     | important | Fix the low-probability data abort issue | The reboot of the device during secure storage may trigger it with a low probability | -            |
+
+------
+
+## px30_bl32_v2.20.bin
+
+| Date       | File                   | Build Commit | Severity |
+| ---------- | ---------------------- | ------------ | -------- |
+| 2026-03-10 | px30_bl32_v2.20.bin | 14421695d    | important |
+
+### New
+
+1. Support CTR mode.
+2. OAEP decode compatible with MGF1 = SHA1.
+3. Support DICE data read/write.
+5. Support kt_cipher_mac and rk_oem_otp_key_aead.
+5. Supports user TA cipher.
+6. Support rk_verify_config_ip.
+
+### Fixed
+
+| Index | Severity | Update                 | Issue description                 | Issue source |
+| ----- | -------- | ---------------------------------- | ---------------------------------------- | -------- |
+| 1     | important | Enable CE instruction set by default | Algorithm runs slow without CE support | 6343517  |
+| 2 | important | Issue of incomplete data in ta_ver.db caused by power failure | ldelf_init_with_ldelf:126 ldelf failed with res: 0xffff0007 | 613634 |
+
+------
+
+## px30_bl31_v1.35.elf
+
+| Date       | File                  | Build commit | Severity  |
+| ---------- | :-------------------- | ------------ | --------- |
+| 2026-02-12 | px30_bl31_v1.35.elf | afdac37e9 | important |
+
+### New
+
+1. Improve the stability of OTP.
+
+------
+
+## px30_ddr_333MHz_v2.12.bin
+
+| Date       | file                      | Build commit | Severity  |
+| ---------- | ------------------------- | ------------ | --------- |
+| 2025-09-11 | px30_ddr_333MHz_v2.12.bin | e8ca401      | important |
+
+### Fixed
+
+| Index | Severity  | Update                      | Issue description | Issue source |
+| ----- | --------- | --------------------------- | ----------------- | ------------ |
+| 1     | important | Improve the security of DDR | -                 | -            |
+
+------
+
+## px30_usbplug_v1.42.bin
+
+| Date       | File                   | Build commit | Severity  |
+| ---------- | -----------------------| ------------ | --------- |
+| 2025-09-12 | px30_usbplug_v1.42.bin | a29b4938e   | important |
+
+### Fixed
+
+| Index | Severity  | Update                          | Issue description | Issue source |
+| ----- | --------- | ------------------------------- | ----------------- | ------------ |
+| 1     | important | Improve the security of USBPLUG | -                 | -            |
+
+------
+
+## px30_bl32_v2.19.bin
+
+| Date       | File                | Build commit | Severity  |
+| ---------- | :------------------ | ------------ | --------- |
+| 2024-10-31 | px30_bl32_v2.19.bin | 9f2aca7d1    | important |
+
+### Fixed
+
+| Index | Severity  | Update                                            | Issue description                                            | Issue source |
+| ----- | --------- | ------------------------------------------------- | ------------------------------------------------------------ | ------------ |
+| 1     | important | fixed RSA OAEP MGF1 algorithm                     | TA will report an error when using RSA algorithm OAEP MGF1 padding method | -            |
+| 2     | important | fixed condition of whether secure boot is enabled | Under unstable hardware conditions, it may be mistakenly believed that secure boot is enabled | -            |
+
+------
+
+## px30_bl32_v2.18.bin
+
+| Date       | File                | Build commit | Severity  |
+| ---------- | :------------------ | ------------ | --------- |
+| 2024-09-02 | px30_bl32_v2.18.bin | 6c78a7d8c    | important |
+
+### New
+
+1.  Support software TA encryption key, customers can use TA encryption function without burning the key.
+
+------
+
+## px30_ddr_333MHz_v2.11.bin
+
+| Date       | file                      | Build commit | Severity  |
+| ---------- | ------------------------- | ------------ | --------- |
+| 2024-08-19 | px30_ddr_333MHz_v2.11.bin | 01f75b4      | important |
+
+### Fixed
+
+| Index | Severity  | Update                                                | Issue description                                            | Issue source |
+| ----- | --------- | ----------------------------------------------------- | ------------------------------------------------------------ | ------------ |
+| 1     | important | Solve the ddr4 power on probability capacity anomaly. | If the power is off and the power is on, the ddr4 probability will lack 1/4 or 1/2 capacity. | -            |
+
+------
+
+## px30_bl32_v2.17.bin
+
+| Date       | File                | Build commit | Severity  |
+| ---------- | :------------------ | ------------ | --------- |
+| 2024-07-09 | px30_bl32_v2.17.bin | 7ab599eca    | important |
+
+### New
+
+1.  Other security enhancements.
+2.  RPMB change read data to multiple times.
+3.  Increase MPI_MEMPOOL_SIZE size.
+
+------
+
+## px30_ddr_333MHz_v2.10.bin
+
+| Date       | file                      | Build commit | Severity  |
+| ---------- | ------------------------- | ------------ | --------- |
+| 2024-05-27 | px30_ddr_333MHz_v2.10.bin | 29a6ff7      | important |
+
+### Fixed
+
+| Index | Severity  | Update                                                    | Issue description                                            | Issue source |
+| ----- | --------- | --------------------------------------------------------- | ------------------------------------------------------------ | ------------ |
+| 1     | important | Solve the problem of lp3 power-on probability not booting | On and off the power copy machine, lp3 probability does not turn on the problem | -            |
+
+------
+
+## px30_bl32_v2.16.bin
+
+| Date       | File                | Build commit | Severity  |
+| ---------- | :------------------ | ------------ | --------- |
+| 2024-04-16 | px30_bl32_v2.16.bin | 185dc3c92    | important |
+
+### New
+
+1. Optimization parameter check to enhance security.
+2. Support printing TEE memory usage information.
+3. Hardware crypto supports addresses exceeding 4G.
+4. Support printing FWVER information.
+
+------
+
+## px30_ddr_333MHz_v2.09.bin
+
+| Date       | file                      | Build commit | Severity |
+| ---------- | ------------------------- | ------------ | -------- |
+| 2023-12-20 | px30_ddr_333MHz_v2.09.bin | 131f35b      | moderate |
+
+### New
+
+1. Add DQS weak pull up/down.
+
+------
+
+## px30_bl31_v1.34.elf
+
+| Date       | file                | Build commit | Severity |
+| ---------- | ------------------- | ------------ | -------- |
+| 2023-12-26 | px30_bl31_v1.34.elf | 46064b2d5    | moderate |
+
+### New
+
+1. Support DDR Extended temperature range which should used with 2x, 4x refresh rate ddr bin file.
+
+------
+
 ## px30_bl32_v2.15.bin
 
 | Date       | File                | Build commit | Severity  |
